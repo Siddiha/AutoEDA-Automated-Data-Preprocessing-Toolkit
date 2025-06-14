@@ -2,8 +2,10 @@ import React, { useRef, useState } from 'react';
 import { Button } from './ui/button';
 import { Link, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import About from './About';
+import FileUpload from './FileUpload';
 
-const illustration = 'https://img.freepik.com/free-vector/business-landing-page-template_23-2148320286.jpg'; // Placeholder illustration
+const automationGif = 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2jEy964hpru6n3w7n2bhnfhgu563qrks/giphy.gif'; // Replace with a more relevant GIF if available
 
 const navItems = [
   { label: 'About Us', section: 'about' },
@@ -91,6 +93,9 @@ const Home = () => {
     if (section === 'review') scrollToSection(reviewRef);
   };
 
+  // Scroll to Try Our Model when Get Started is clicked
+  const handleGetStarted = () => handleScrollTo('try');
+
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-br from-blue-200 via-blue-100 to-purple-100 font-sans">
       <Navbar onScrollTo={handleScrollTo} />
@@ -106,18 +111,17 @@ const Home = () => {
               Automated Exploratory Data Analysis. Instant insights, zero hassle. <br />
               <span className="text-blue-500 font-semibold">Empower your data journey.</span>
             </p>
-            <Button className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-700 text-white px-8 py-3 rounded-full text-lg font-bold shadow-lg hover:from-blue-600 hover:to-purple-600 transition-all animate-fade-in-up">Get Started</Button>
+            <Button onClick={handleGetStarted} className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-700 text-white px-8 py-3 rounded-full text-lg font-bold shadow-lg hover:from-blue-600 hover:to-purple-600 transition-all animate-fade-in-up">Get Started</Button>
           </div>
-          {/* Right: Illustration */}
+          {/* Right: Automation GIF */}
           <div className="flex-1 flex items-center justify-center animate-slide-in-right">
-            <img src={illustration} alt="Landing Illustration" className="w-full max-w-md rounded-xl shadow-lg object-cover" />
+            <img src={automationGif} alt="Data Automation GIF" className="w-full max-w-md rounded-xl shadow-lg object-cover" />
           </div>
         </div>
       </div>
       {/* About Us Section */}
       <section ref={aboutRef} id="about" className="w-full max-w-6xl mx-auto my-16 bg-white/90 rounded-2xl shadow-lg px-8 py-16 animate-fade-in-up">
-        <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4 font-display">About Us</h2>
-        <p className="text-gray-700 text-lg">[About Us content goes here]</p>
+        <About />
       </section>
       {/* How it works Section */}
       <section ref={howRef} id="how" className="w-full max-w-6xl mx-auto my-16 bg-white/90 rounded-2xl shadow-lg px-8 py-16 animate-fade-in-up">
@@ -126,8 +130,7 @@ const Home = () => {
       </section>
       {/* Try Our Model Section */}
       <section ref={tryRef} id="try" className="w-full max-w-6xl mx-auto my-16 bg-white/90 rounded-2xl shadow-lg px-8 py-16 animate-fade-in-up">
-        <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4 font-display">Try Our Model</h2>
-        <p className="text-gray-700 text-lg">[Try Our Model content goes here]</p>
+        <FileUpload />
       </section>
       {/* Leave a Review Section */}
       <section ref={reviewRef} id="review" className="w-full max-w-6xl mx-auto my-16 bg-white/90 rounded-2xl shadow-lg px-8 py-16 animate-fade-in-up">
