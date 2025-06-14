@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from './ui/button';
+import { Link } from 'react-router-dom';
 
 const illustration = 'https://img.freepik.com/free-vector/business-landing-page-template_23-2148320286.jpg'; // Placeholder illustration
 
@@ -15,6 +16,7 @@ const Navbar = () => (
       <li className="hover:text-blue-600 cursor-pointer">Course</li>
       <li className="hover:text-blue-600 cursor-pointer">Pricing</li>
       <li className="hover:text-blue-600 cursor-pointer">Contact</li>
+      <li><Link to="/contact" className="hover:text-blue-600 cursor-pointer">Contact</Link></li>
     </ul>
     <Button className="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-2 rounded-full shadow hover:from-blue-600 hover:to-blue-800 transition-all font-semibold">Get Started</Button>
   </nav>
