@@ -137,6 +137,15 @@ const Home = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4 font-display">Leave a Review</h2>
         <p className="text-gray-700 text-lg">[Leave a Review content goes here]</p>
       </section>
+      {/* Footer */}
+      <footer className="w-full bg-gradient-to-r from-blue-100 via-white to-purple-100 border-t border-gray-200 py-6 mt-8 flex flex-col items-center text-center">
+        <div className="flex items-center gap-2 mb-2">
+          <span className="font-bold text-lg text-blue-900">AutoEDA</span>
+          <span className="text-gray-400">|</span>
+          <a href="https://github.com/your-repo-link" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">GitHub</a>
+        </div>
+        <div className="text-gray-500 text-sm">© {new Date().getFullYear()} AutoEDA. All rights reserved.</div>
+      </footer>
     </div>
   );
 };
